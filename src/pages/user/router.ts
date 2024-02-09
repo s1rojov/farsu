@@ -1,6 +1,6 @@
 const cabinet = [
     {
-        path: 'user',
+        path: 'personal-cabinet',
         name: 'Cabinet for user',
         component: () => import('src/pages/user/index.vue')
     }

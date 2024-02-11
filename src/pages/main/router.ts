@@ -1,7 +1,7 @@
 const main = [
     {
         path: '',
-        name: 'Landing page',
+        name: 'Home page',
         component: () => import(
             'src/pages/main/index.vue'
         )

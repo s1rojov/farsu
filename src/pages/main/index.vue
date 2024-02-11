@@ -1,7 +1,8 @@
+<script setup lang="ts">
+import TheHeader from 'src/components/TheHeader/index.vue'
+</script>
 <template>
     <div>
-        this is main page
+        <TheHeader />
     </div>
 </template>
-<script setup lang="ts">
-</script>

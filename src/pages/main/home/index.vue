@@ -68,6 +68,31 @@ const slide = ref<number>(1)
             </div>
         </div>
         <!-- Categories ended -->
+        <!-- statistic section started -->
+        <div class="bg-[#1B9468]/95 w-full h-auto rounded-3xl mt-16 relative px-20">
+            <div class="flex items-center justify-between py-5">
+                <div class="z-[1] w-1/2 pr-5">
+                    <p class="text-white text-5xl font-extrabold uppercase leading-[50px]">Biz raqamlarda</p>
+                    <p class="text-white text-base font-medium leading-[30px]">Lorem ipsum dolor sit amet consectetur.
+                        Pretium urna mattis sagittis vulputate aenean. Quis vel faucibus varius orci adipiscing proin nulla
+                        ultricies. Eget faucibus augue volutpat tempus mi et ullamcorper vivamus elementum. Est felis urna
+                        at leo.</p>
+                </div>
+                <div class=" w-1/2">
+                    <div class="flex flex-wrap w-full">
+                        <div class="w-1/2 py-10 px-4 text-center" v-for="item in 4" :key="item"
+                            :class="{ 'border border-t-0 border-l-0': item == 1, 'border border-b-0 border-r-0': item == 4, }">
+                            <p class="text-white text-4xl font-extrabold leading-10">2 500</p>
+                            <p class=" text-white text-base font-semibold leading-[25px]">Roʻyxatdan oʻtgan
+                                tadbirkorlar (Oʻzbekiston)</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <img src="images/statistic.png" class="absolute w-[30%] bottom-0" alt="error">
+        </div>
+        <!-- statistic section ended -->
     </div>
 </template>
   

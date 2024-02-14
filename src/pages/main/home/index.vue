@@ -1,11 +1,18 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import BaseButton from 'src/components/BaseButton/index.vue'
+import CategoryCard from 'src/components/CategoryCard/index.vue'
+const objInfo = {
+    iconName: 'industry',
+    label: 'Sanoat',
+    path: '/',
+    count: 12
+}
 
 const slide = ref<number>(1)
 </script>
 <template>
-    <div class="lg:px-20 container mx-auto pt-6">
+    <div class="lg:px-20 container mx-auto pt-8">
         <div class="grid grid-cols-4 gap-4">
             <div class="col-span-3">
                 <q-carousel animated v-model="slide" arrows infinite swipeable :autoplay="3000"
@@ -40,6 +47,27 @@ const slide = ref<number>(1)
             </div>
 
         </div>
+        <div class="bg-white rounded-3xl flex items-center justify-between py-4 px-5 mt-10">
+            <div class="flex items-center justify-start gap-5">
+                <img src="images/fartrade.png" alt="">
+                <div>
+                    <p class="text-emerald-600 text-2xl uppercase leading-6 font-semibold">fartade mchj</p>
+                    <p class="text-zinc-900 font-semibold text-base">Bizninng korxonamiz haqida batafsil ma‘lumotga ega
+                        bo’ling
+                    </p>
+                </div>
+            </div>
+            <BaseButton color="green" class="py-3 px-20" label="Batafsil" />
+        </div>
+
+        <!-- Categories started -->
+        <div class="mt-16">
+            <div class="text-slate-800 text-[40px] font-extrabold leading-[50px]">Bo’limlarni turlari</div>
+            <div class="grid grid-cols-4 gap-5 mt-6">
+                <CategoryCard v-for="item in 8" :key="item" :cardData="objInfo" />
+            </div>
+        </div>
+        <!-- Categories ended -->
     </div>
 </template>
   

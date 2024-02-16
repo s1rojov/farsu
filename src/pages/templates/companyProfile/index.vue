@@ -12,8 +12,8 @@
             </div>
             <div class="pt-6 flex gap-2">
               <p class="text-slate-800 text-2xl font-extrabold leading-[25px]">Fartrade MCHJ</p>
-              <div class="flex items-center px-1 rounded-3xl bg-[#1b9468]">
-                <BaseIcon name="gold-star" />
+              <div class="flex items-center px-2.5 justify-center gap-1 rounded-3xl bg-[#1b9468]">
+                <BaseIcon name="gold-star" class="w-3.5 h-3.5" />
                 <p class="text-white text-xs font-extrabold leading-5">5.0</p>
               </div>
             </div>
@@ -49,7 +49,7 @@
             <div class="overflow-hidden w-full h-52 rounded-2xl">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6141654.177482915!2d59.32573334688684!3d41.26850209785043!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8b20a5d676b1%3A0xca0a6dad7e841e20!2z0KPQt9Cx0LXQutC40YHRgtCw0L0!5e0!3m2!1sru!2s!4v1708089919007!5m2!1sru!2s"
-                width="600" height="450" style="border:0;" loading="lazy"
+                class="w-full h-full" style="border:0;" loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
           </div>

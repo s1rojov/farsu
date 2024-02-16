@@ -25,7 +25,7 @@ function clickedSearchBtn() {
 }
 </script>
 <template>
-    <div class="w-fit relative">
+    <div class="relative">
         <input :value="props.modelValue" @input="$emit('update:modelValue', ($event.target as HTMLInputElement).value)"
             :type="props.type"
             class="border-none outline-none w-full bg-white pl-2 text-sm py-2 rounded-3xl placeholder:text-zinc-900 placeholder:text-sm"

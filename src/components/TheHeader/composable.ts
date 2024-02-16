@@ -4,7 +4,7 @@ export function useHeader() {
     const navbarItems = ref<{ title: string, route: string }[]>([
         {
             title: 'Fartrade MCHJ',
-            route: ''
+            route: '/fartrade'
         },
         {
             title: 'Logistika xizmati',
@@ -20,7 +20,7 @@ export function useHeader() {
         },
         {
             title: 'FAQ',
-            route: ''
+            route: '/faq'
         },
         {
             title: 'Yangiliklar',

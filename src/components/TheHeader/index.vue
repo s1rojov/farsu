@@ -39,8 +39,10 @@ function test() {
     <div class="bg-emerald-600 w-full">
         <div class="mx-auto lg:px-20 container pt-3 pb-5">
             <div class="flex items-center justify-between">
-                <img src="images/logo.png" alt="logo" class="cursor-pointer">
-                <BaseInput placeholder="Izlash" :isSearch="true" class="w-[50%]" @search="test" />
+                <router-link to="/">
+                    <img src="images/logo.png" alt="logo" class="cursor-pointer">
+                </router-link>
+                <BaseInput placeholder="Izlash" :isSearch="true" class="w-1/2" @search="test" />
                 <div class="flex items-center gap-2 cursor-pointer">
                     <BaseIcon name="message" class="w-4 h-4" />
                     <div class="text-white text-base leading-[15px]">Xabar</div>

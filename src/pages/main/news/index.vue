@@ -1,10 +1,6 @@
 <script setup lang="ts">
-import TheHeader from 'src/components/TheHeader/index.vue'
-import TheFooter from 'src/components/TheFooter/index.vue'
-import BaseIcon from 'src/components/BaseIcon/index.vue'
 </script>
 <template>
-  <TheHeader />
   <div class="container mx-auto lg:px-20 pt-9">
     <p class="title">Yangilik va e'lonlar</p>
     <div class="pt-9 grid grid-cols-2 ">
@@ -34,7 +30,6 @@ import BaseIcon from 'src/components/BaseIcon/index.vue'
       </div>
     </div>
   </div>
-  <TheFooter />
 </template>
 <style scoped>
 .title {

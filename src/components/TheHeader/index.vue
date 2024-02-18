@@ -1,9 +1,33 @@
 <script setup lang="ts">
 import BaseInput from 'src/components/BaseInput/index.vue'
+import { useRoute } from 'vue-router';
 import { useHeader } from './composable';
+import BaseSelect from 'src/components/BaseSelect/index.vue'
+const route = useRoute()
 const { socials, navbarItems } = useHeader()
 function test() {
     console.log('search')
+    console.log(route.fullPath)
+}
+const languages = [
+    {
+        id: 1,
+        title: 'UZ',
+        icon: 'uzb'
+    },
+    {
+        id: 2,
+        title: 'ENG',
+        icon: 'eng'
+    },
+    {
+        id: 3,
+        title: 'RUS',
+        icon: 'rus'
+    }
+]
+function testt(val: any) {
+    console.log(val);
 }
 </script>
 <template>
@@ -27,11 +51,12 @@ function test() {
                 <div class="text-zinc-900 text-base font-semibold leading-tight">Bizning ijtimoiy sahifalarimiz</div>
             </div>
             <div class="w-[1px] h-4 bg-gray-300"></div>
-            <div class="flex items-center gap-2">
+            <!-- <div class="flex items-center gap-2">
                 <BaseIcon name="uzb" class="w-[18px] h-3" />
                 <div class="text-zinc-900 text-base font-semibold leading-tight">Uzbek tili</div>
                 <BaseIcon name="down" class="w-3 h-3" />
-            </div>
+            </div> -->
+            <BaseSelect :options="languages" @select="testt" />
         </div>
     </div>
     <!-- top header ended -->
@@ -52,10 +77,12 @@ function test() {
                     <div class="text-white text-base leading-[15px]">Valyuta-uzs</div>
                 </div>
             </div>
-            <div class="bg-white flex items-center justify-between px-7 py-2 rounded-3xl mt-3">
+            <div class="bg-white flex items-center justify-between rounded-3xl mt-3 px-1.5">
                 <div v-for="item, index in navbarItems" :key="index">
-                    <router-link :to="item.route">
-                        {{ item.title }}
+                    <router-link v-slot="{ isActive }" :to="item.route">
+                        <div class="px-7" :class="[isActive ? 'bg-emerald-600 text-white py-1.5 rounded-3xl' : 'py-2.5']">
+                            {{ item.title }}
+                        </div>
                     </router-link>
                 </div>
 

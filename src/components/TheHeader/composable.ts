@@ -8,15 +8,15 @@ export function useHeader() {
         },
         {
             title: 'Logistika xizmati',
-            route: ''
+            route: '/logistic'
         },
         {
             title: 'Shartnoma tuzish',
-            route: ''
+            route: '/contract'
         },
         {
             title: "Bog'lanish",
-            route: ''
+            route: '/contact'
         },
         {
             title: 'FAQ',
@@ -24,7 +24,7 @@ export function useHeader() {
         },
         {
             title: 'Yangiliklar',
-            route: ''
+            route: '/news'
         }
     ])
     return {

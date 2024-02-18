@@ -19,6 +19,11 @@ const main = {
             path: 'fartrade',
             name: 'Fartrade MChJ',
             component: () => import('src/pages/main/fartrade/index.vue')
+        },
+        {
+            path: 'news',
+            name: 'News page',
+            component: () => import('src/pages/main/news/index.vue')
         }
     ]
 }

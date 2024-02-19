@@ -1,20 +1,59 @@
 <script setup lang="ts">
+interface News {
+  image: string,
+  data: string,
+  title: string
+}
+import BaseNewsCard from 'src/components/BaseNewsCard/index.vue'
+const newscard: News[] = [
+  {
+    image: '/images/fartrade-img.png',
+    data: '16:15 / 16.11.2023',
+    title: 'Lorem ipsum dolor sit amet consectetur Turpis fermentum purus egestas maecenas mi lectus egestas cursus. Placerat lorem.'
+  },
+  {
+    image: '/images/fartrade-img.png',
+    data: '16:15 / 16.11.2023',
+    title: 'Lorem ipsum dolor sit amet consectetur Turpis fermentum purus egestas maecenas mi lectus egestas cursus. Placerat lorem.'
+  },
+  {
+    image: '/images/fartrade-img.png',
+    data: '16:15 / 16.11.2023',
+    title: 'Lorem ipsum dolor sit amet consectetur Turpis fermentum purus egestas maecenas mi lectus egestas cursus. Placerat lorem.'
+  },
+  {
+    image: '/images/fartrade-img.png',
+    data: '16:15 / 16.11.2023',
+    title: 'Lorem ipsum dolor sit amet consectetur Turpis fermentum purus egestas maecenas mi lectus egestas cursus. Placerat lorem.'
+  },
+  {
+    image: '/images/fartrade-img.png',
+    data: '16:15 / 16.11.2023',
+    title: 'Lorem ipsum dolor sit amet consectetur Turpis fermentum purus egestas maecenas mi lectus egestas cursus. Placerat lorem.'
+  },
+  {
+    image: '/images/fartrade-img.png',
+    data: '16:15 / 16.11.2023',
+    title: 'Lorem ipsum dolor sit amet consectetur Turpis fermentum purus egestas maecenas mi lectus egestas cursus. Placerat lorem.'
+  },
+  {
+    image: '/images/fartrade-img.png',
+    data: '16:15 / 16.11.2023',
+    title: 'Lorem ipsum dolor sit amet consectetur Turpis fermentum purus egestas maecenas mi lectus egestas cursus. Placerat lorem.'
+  },
+  {
+    image: '/images/fartrade-img.png',
+    data: '16:15 / 16.11.2023',
+    title: 'Lorem ipsum dolor sit amet consectetur Turpis fermentum purus egestas maecenas mi lectus egestas cursus. Placerat lorem.'
+  }
+]
 </script>
 <template>
   <div class="container mx-auto lg:px-20 pt-9">
     <p class="title">Yangilik va e'lonlar</p>
-    <div class="pt-9 grid grid-cols-2 ">
-      <div class="flex flex-nowrap gap-5 mb-10" v-for="index in 8" :key="index">
-        <img src="/images/fartrade-img.png" alt=""
-          class="w-1/3 h-full object-cover overflow-hidden rounded-[20px]">
-        <div class="w-3/5 relative border-b border-black border-opacity-20 pb-11">
-          <p class="flex gap-2 items-center text-slate-800 text-base font-medium pb-2">
-            <BaseIcon name="data" /><span>16:15 / 16.11.2023</span>
-          </p>
-          <p class="text-zinc-900 2xl:text-lg text-sm font-extrabold leading-6">Lorem ipsum dolor sit amet consectetur.
-            Turpis
-            fermentum purus egestas maecenas mi lectus egestas cursus. Placerat lorem.</p>
-        </div>
+    <div class="pt-9 grid grid-cols-2">
+      <div v-for="(news, index) in newscard" :key="index">
+        <BaseNewsCard :card-data="news"/>
       </div>
     </div>
     <div class="pt-7 flex gap-7 flex-nowrap">

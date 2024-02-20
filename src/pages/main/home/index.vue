@@ -47,7 +47,9 @@ const slide = ref<number>(1)
                         <p>Xush kelibsiz</p>
                     </div>
                     <hr class="border-t border-gray-600 border-dashed my-2.5">
-                    <BaseButton color="green" label="Ro'yhatdan o'tish" class="py-1.5" />
+                    <router-link to="/login">
+                        <BaseButton color="green" label="Ro'yhatdan o'tish" class="py-1.5" />
+                    </router-link>
                     <BaseButton color="white" label="Kabinetga kirish" class="py-1.5 mt-2" />
                 </div>
                 <div class="bg-white rounded-3xl w-full h-[55%] mt-[3%]">
@@ -72,7 +74,9 @@ const slide = ref<number>(1)
                     </p>
                 </div>
             </div>
-            <BaseButton color="green" class="py-3 px-20" label="Batafsil" />
+            <router-link to="/fartrade">
+                <BaseButton color="green" class="py-3 px-20" label="Batafsil" />
+            </router-link>
         </div>
 
         <!-- Categories started -->

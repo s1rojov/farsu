@@ -11,15 +11,7 @@ export function useHeader() {
             route: '/logistic'
         },
         {
-            title: 'Shartnoma tuzish',
-            route: '/contract'
-        },
-        {
-            title: "Bog'lanish",
-            route: '/contact'
-        },
-        {
-            title: 'FAQ',
+            title: "Ko'p so'raladigan savollar",
             route: '/faq'
         },
         {

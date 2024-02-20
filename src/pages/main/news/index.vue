@@ -53,12 +53,12 @@ const newscard: News[] = [
     <p class="title">Yangilik va e'lonlar</p>
     <div class="pt-9 grid grid-cols-2">
       <div v-for="(news, index) in newscard" :key="index">
-        <BaseNewsCard :card-data="news"/>
+        <BaseNewsCard :card-data="news" />
       </div>
     </div>
     <div class="pt-7 flex gap-7 flex-nowrap">
-      <div class="flex flex-col w-[24%] " v-for="index in 4" :key="index">
-        <img src="/images/fartrade-img.png" class="w-full h-1/2 object-cover overflow-hidden rounded-[20px]">
+      <div class=" w-[24%]" v-for="index in 4" :key="index">
+        <img src="/images/fartrade-img.png" class="w-full h-[60%] object-cover overflow-hidden rounded-[20px]">
         <p class="flex gap-2 items-center text-slate-800 text-base font-medium pt-1 pb-2">
           <BaseIcon name="data" /><span>16:15 / 16.11.2023</span>
         </p>

@@ -21,6 +21,11 @@ const main = {
             component: () => import('src/pages/main/fartrade/index.vue')
         },
         {
+            path: 'logistic',
+            name: 'Logistika xizmati',
+            component: () => import('src/pages/main/logistic/index.vue')
+        },
+        {
             path: 'news',
             name: 'News page',
             component: () => import('src/pages/main/news/index.vue')

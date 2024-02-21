@@ -1,7 +1,52 @@
+<script setup lang="ts">
+import { useCabinetLayoutFn } from './composable';
+import BaseIcon from 'src/components/BaseIcon/index.vue'
+const { sidebarItems, clickedCompanyItem, isOpenCompanyItems } = useCabinetLayoutFn()
+</script>
 <template>
-    <div class="text-red-500">
-        this is cabinet page
+    <div class="flex w-screen h-screen overflow-hidden">
+        <div class="bg-emerald-600 w-1/5 h-full">
+            <!-- <img src="images/logo.png" class="mx-auto w-1/2 mt-5" alt="error"> -->
+            <BaseIcon name="logo" class="mx-auto w-1/2 mt-5" />
+            <div class="mt-11">
+                <div v-for="item, index in sidebarItems" :key="index" class="select-none cursor-pointer ">
+                    <div class="flex  items-center justify-between transition pl-10 pr-4 py-4 hover:bg-black/5"
+                        @click="clickedCompanyItem(item.icon)">
+                        <div class="flex items-center justify-start gap-3">
+                            <BaseIcon :name="item.icon" class="w-5 h-5" />
+                            <span class="text-base text-white">{{ item.title }}</span>
+                        </div>
+                        <BaseIcon v-if="item.children?.length" name="down" class="w-4 h-4 text-white" />
+                    </div>
+                    <div v-if="isOpenCompanyItems">
+                        <div v-for="subItem, subIndex in item.children" :key="subIndex" class="pl-16">
+                            <p class="py-2 text-white transition text-sm">
+                                {{ subItem.title }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="w-4/5 h-full">
+            <!-- header -->
+        </div>
     </div>
 </template>
-<script setup lang="ts">
-</script>
+<style scoped>
+.scrollbarActive::-webkit-scrollbar {
+    @apply ease-in duration-300;
+    width: 2px;
+    height: 0;
+    /* display: none; */
+    opacity: 0;
+}
+
+.scrollbarActive::-webkit-scrollbar-track {
+    @apply bg-inherit opacity-0;
+}
+
+.scrollbarActive::-webkit-scrollbar-thumb {
+    @apply bg-slate-400 hover:bg-slate-500 hover:dark:bg-slate-600 opacity-0 ease-in duration-300 transition rounded-md cursor-pointer;
+}
+</style>

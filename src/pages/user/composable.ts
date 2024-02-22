@@ -5,7 +5,7 @@ export function useCabinetLayoutFn() {
         {
             title: 'Bosh sahifa',
             icon: 'home',
-            path: ''
+            path: '/personal-cabinet'
         },
         {
             title: 'Kompaniya',
@@ -16,19 +16,24 @@ export function useCabinetLayoutFn() {
                     title: 'Kompaniya haqida'
                 },
                 {
-                    path: '',
+                    path: 'requisite',
                     title: 'Rekvizitlar'
                 },
                 {
-                    path: '',
+                    path: 'upload-data',
                     title: "Ma'lumot yuklash",
                 }
             ]
         },
         {
+            title: 'Mahsulot/Xizmat',
+            icon: 'product',
+            path: 'product'
+        },
+        {
             title: 'Tarif reja',
             icon: 'plan',
-            path: ''
+            path: 'plans'
         }
     ]
     function clickedCompanyItem(icon: string) {

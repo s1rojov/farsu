@@ -29,7 +29,23 @@ const { sidebarItems, clickedCompanyItem, isOpenCompanyItems } = useCabinetLayou
             </div>
         </div>
         <div class="w-4/5 h-full">
-            <!-- header -->
+            <!-- header started -->
+            <div class="w-full bg-white py-2 px-7   ">
+                <div class="flex items-center justify-end gap-5">
+                    <BaseIcon name="notification" class="w-5 h-5 cursor-pointer" />
+                    <BaseIcon name="basket" class="w-5 h-5 cursor-pointer" />
+                    <div class="flex items-center gap-2 cursor-pointer select-none">
+                        <img src="images/company-logo.png" class="w-10 h-10 rounded-full" alt="company-logo">
+                        <div>
+                            <p class="text-zinc-900 text-sm font-medium leading-3">Komaniya kabineti</p>
+                            <p class="text-gray-500 text-xs font-medium leading-[18px]">MK Exspress Cargo Ltd</p>
+                        </div>
+                        <BaseIcon name="down" class="w-4 h-4" />
+                    </div>
+                </div>
+            </div>
+            <!-- header ended -->
+            <router-view></router-view>
         </div>
     </div>
 </template>

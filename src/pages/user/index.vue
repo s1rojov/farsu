@@ -5,12 +5,12 @@ const { sidebarItems, clickedCompanyItem, isOpenCompanyItems } = useCabinetLayou
 </script>
 <template>
     <div class="flex w-screen h-screen overflow-hidden">
-        <div class="bg-emerald-600 w-1/5 h-full">
+        <div class="bg-emerald-600 w-[17%] h-full">
             <!-- <img src="images/logo.png" class="mx-auto w-1/2 mt-5" alt="error"> -->
             <BaseIcon name="logo" class="mx-auto w-1/2 mt-5" />
             <div class="mt-11">
                 <div v-for="item, index in sidebarItems" :key="index" class="select-none cursor-pointer ">
-                    <div class="flex  items-center justify-between transition pl-10 pr-4 py-4 hover:bg-black/5"
+                    <div class="flex  items-center justify-between transition pl-6 pr-4 py-4 hover:bg-black/5"
                         @click="clickedCompanyItem(item.icon)">
                         <div class="flex items-center justify-start gap-3">
                             <BaseIcon :name="item.icon" class="w-5 h-5" />
@@ -19,7 +19,7 @@ const { sidebarItems, clickedCompanyItem, isOpenCompanyItems } = useCabinetLayou
                         <BaseIcon v-if="item.children?.length" name="down" class="w-4 h-4 text-white" />
                     </div>
                     <div v-if="isOpenCompanyItems">
-                        <div v-for="subItem, subIndex in item.children" :key="subIndex" class="pl-16">
+                        <div v-for="subItem, subIndex in item.children" :key="subIndex" class="pl-10">
                             <p class="py-2 text-white transition text-sm">
                                 {{ subItem.title }}
                             </p>
@@ -28,7 +28,7 @@ const { sidebarItems, clickedCompanyItem, isOpenCompanyItems } = useCabinetLayou
                 </div>
             </div>
         </div>
-        <div class="w-4/5 h-full">
+        <div class="w-[83%] h-full">
             <!-- header started -->
             <div class="w-full bg-white py-2 px-7   ">
                 <div class="flex items-center justify-end gap-5">

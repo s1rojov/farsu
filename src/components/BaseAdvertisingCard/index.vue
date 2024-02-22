@@ -24,7 +24,7 @@ const props = defineProps({
       <div class="w-[47%]">
         <img :src="props.cardData.image1" alt="" class="product-img">
         <p class="flex items-start py-[7px]">
-          <BaseIcon name="gold-star" class="w-[14px] h-[14px]" /><span
+          <BaseIcon name="star" class="w-[14px] h-[14px]" /><span
             class="txet-gray-500 text-xs font-medium leading-[15px]">{{ props.cardData.star }}</span>
         </p>
         <p class="about">{{ props.cardData.about }}</p>
@@ -34,7 +34,7 @@ const props = defineProps({
       <div class="w-[47%]">
         <img :src="props.cardData.image2" alt="" class="product-img">
         <p class="flex items-start py-[7px]">
-          <BaseIcon name="gold-star" class="w-[14px] h-[14px]" /><span
+          <BaseIcon name="star" class="w-[14px] h-[14px]" /><span
             class="txet-gray-500 text-xs font-medium leading-[15px]">{{ props.cardData.star2 }}</span>
         </p>
         <p class="about">{{ props.cardData.about2 }}</p>

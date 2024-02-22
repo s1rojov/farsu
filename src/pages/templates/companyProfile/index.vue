@@ -13,7 +13,7 @@
             <div class="pt-6 flex gap-2">
               <p class="text-slate-800 text-2xl font-extrabold leading-[25px]">Fartrade MCHJ</p>
               <div class="flex items-center px-2.5 justify-center gap-1 rounded-3xl bg-[#1b9468]">
-                <BaseIcon name="gold-star" class="w-3.5 h-3.5" />
+                <BaseIcon name="star" class="w-3.5 h-3.5" />
                 <p class="text-white text-xs font-extrabold leading-5">5.0</p>
               </div>
             </div>

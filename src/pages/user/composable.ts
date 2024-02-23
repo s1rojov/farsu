@@ -16,10 +16,6 @@ export function useCabinetLayoutFn() {
                     title: 'Kompaniya haqida'
                 },
                 {
-                    path: 'requisite',
-                    title: 'Rekvizitlar'
-                },
-                {
                     path: 'upload-data',
                     title: "Ma'lumot yuklash",
                 }

@@ -3,9 +3,10 @@ import BaseSelect from 'src/components/BaseSelect/index.vue'
 import BaseButton from 'src/components/BaseButton/index.vue'
 import BaseIcon from 'src/components/BaseIcon/index.vue'
 import BaseModal from 'src/components/BaseModal/index.vue'
+import BaseInput from 'src/components/BaseInput/index.vue'
 import { Ref, ref } from 'vue'
 const slide = ref<number>(1);
-const toolbar = ref<boolean>(true)
+const toolbar = ref<boolean>(false)
 const autoplay = ref<boolean>(true);
 const model: Ref<string | null> = ref(null);
 const countries = [
@@ -33,7 +34,58 @@ const countries = [
     id: 3,
     title: "Qashqadaryo viloyati"
   }
-] 
+]
+function toggleBtn() {
+  toolbar.value = !toolbar.value
+}
+interface Car {
+  id: number;
+  name: string;
+  image: string;
+}
+
+const showModal = ref(false);
+const name = ref('');
+const phone = ref('');
+const selectedCar = ref<number>(0);
+const cars: Car[] = [
+  {
+    id: 1,
+    name: 'Labo',
+    image: '/images/labo.png'
+  },
+  {
+    id: 2,
+    name: 'Isuzu',
+    image: '/images/isuzu.png'
+  },
+  {
+    id: 3,
+    name: 'Truck',
+    image: '/images/truck.png'
+  }
+]
+const submitForm = () => {
+  const car = cars.find(car => car.id === selectedCar.value);
+  if (car) {
+    const formData = {
+      name: name.value,
+      phone: phone.value,
+      selectedCar: car.name
+    };
+    console.log(formData);
+  }
+  toggleBtn();
+  resetForm();
+};
+const selectCar = (car: Car) => {
+  selectedCar.value = car.id;
+};
+const resetForm = () => {
+  name.value = '';
+  phone.value = '';
+  selectedCar.value = 0;
+};
 </script>
 <template>
   <div class="container mx-auto lg:px-20 pt-8 pb-36">
@@ -86,7 +138,7 @@ const countries = [
           </div>
         </div>
         <div class="flex justify-end pt-[18px]">
-          <BaseButton label="Davom etish" color="green" class="px-11 py-3" />
+          <BaseButton @click="toggleBtn()" label="Davom etish" color="green" class="px-11 py-3" />
         </div>
       </div>
     </div>
@@ -151,8 +203,29 @@ const countries = [
       </div>
     </div>
   </div>
-  <BaseModal v-model="toolbar" :closable="toolbar" body-class="w-40 h-40 bg-white">
-    
+  <BaseModal v-model="toolbar" :closable="toolbar" body-class="w-1/3 bg-white rounded-[20px] overflow-hidden px-7 py-6">
+    <div class="border-b border-black border-opacity-20 pb-6 flex justify-between items-center">
+      <p class="text-zinc-900 text-[21px] font-extrabold leading-snug">So'rov qoldirish</p>
+      <BaseIcon name="close" @click="toggleBtn()" />
+    </div>
+    <div class="mt-8">
+      <label for="name" class="pb-3 block text-zinc-900 text-base font-semibold leading-snug">Ismingiz</label>
+      <BaseInput v-model="name" type="text" custom-style="bg-stone-50 rounded-md" />
+    </div>
+    <div class="mt-8">
+      <label for="name" class="pb-3 block text-zinc-900 text-base font-semibold leading-snug">Telefon raqam</label>
+      <BaseInput v-model="phone" type="text" custom-style="bg-stone-50 rounded-md" />
+    </div>
+    <p class="py-7 text-zinc-900 text-base font-semibold leading-snug">Avtomobil turi</p>
+    <div class="flex justify-between items-center cursor-pointer">
+      <img class="opacity-30" v-for="car in cars" :key="car.id" :src="car.image" :alt="car.name" @click="selectCar(car)"
+        :class="{
+          'opacity-100': (car.id === selectedCar)
+        }">
+    </div>
+    <div class="flex justify-end pt-10">
+      <BaseButton @click="submitForm()" color="green" label="Yuborish" class="px-8 py-2" />
+    </div>
   </BaseModal>
 </template>
 <style scoped>

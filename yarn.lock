@@ -654,7 +654,7 @@ anymatch@~3.1.2:
     normalize-path "^3.0.0"
     picomatch "^2.0.4"
 
-apexcharts@^3.46.0:
+apexcharts@^3.46.0, "apexcharts@> 3.0.0":
   version "3.46.0"
   resolved "https://registry.npmjs.org/apexcharts/-/apexcharts-3.46.0.tgz"
   integrity sha512-ELAY6vj8JQD7QLktKasTzwm9Wt0qxqfQSo+3QWS7G7I774iK8HCkG1toGsqJH0mkK6PtYBtnSIe66uUcwoCw1w==
@@ -3383,7 +3383,7 @@ vue-router@^4.0.12:
   dependencies:
     "@vue/devtools-api" "^6.5.0"
 
-"vue@^2.6.14 || ^3.3.0", vue@^3.0.0, "vue@^3.0.0-0 || ^2.6.0", vue@^3.2.0, vue@^3.2.25, vue@^3.2.29, vue@3.4.15:
+"vue@^2.6.14 || ^3.3.0", vue@^3.0.0, "vue@^3.0.0-0 || ^2.6.0", vue@^3.2.0, vue@^3.2.25, vue@^3.2.29, "vue@> 3.0.0", vue@3.4.15:
   version "3.4.15"
   resolved "https://registry.npmjs.org/vue/-/vue-3.4.15.tgz"
   integrity sha512-jC0GH4KkWLWJOEQjOpkqU1bQsBwf4R1rsFtw5GQJbjHVKWDzO6P0nWWBTmjp1xSemAioDFj1jdaK1qa3DnMQoQ==
@@ -3393,6 +3393,11 @@ vue-router@^4.0.12:
     "@vue/runtime-dom" "3.4.15"
     "@vue/server-renderer" "3.4.15"
     "@vue/shared" "3.4.15"
+
+vue3-apexcharts@^1.5.2:
+  version "1.5.2"
+  resolved "https://registry.npmjs.org/vue3-apexcharts/-/vue3-apexcharts-1.5.2.tgz"
+  integrity sha512-rGbgUJDjtsyjfRF0uzwDjzt8+M7ICSRAbm1N9KCDiczW8BSpbEZuaEsJDJYnJuLFIIVXIGilYzIcjNBf6NbeYA==
 
 wcwidth@^1.0.1:
   version "1.0.1"

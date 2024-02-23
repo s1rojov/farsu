@@ -14,21 +14,10 @@
       type: [String, Array] as PropType<string | string[]>,
       default: 'bg-[#444343]'
     },
-    closeBtn: {
-      type: Boolean as PropType<boolean>,
-      default: true
-    },
     customHeight: {
       type: String as PropType<string>,
       default: '80vh'
     },
-    closeColor: {
-      type: String as PropType<string>,
-      default: 'success',
-      validator(value: string) {
-        return ['success', 'fail'].includes(value);
-      }
-    }
   });
   function emitInput(event: any) {
     emit('update:modelValue', event);
@@ -36,7 +25,7 @@
 </script>
 
 <template>
-  <q-dialog :model-value="modelValue" :persistent="closable" @update:model-value="emitInput" class="">
+  <q-dialog :model-value="modelValue" :persistent="closable" @update:model-value="emitInput">
     <div :class="bodyClass">
       <slot></slot>
     </div>

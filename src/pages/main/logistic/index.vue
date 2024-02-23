@@ -2,8 +2,10 @@
 import BaseSelect from 'src/components/BaseSelect/index.vue'
 import BaseButton from 'src/components/BaseButton/index.vue'
 import BaseIcon from 'src/components/BaseIcon/index.vue'
+import BaseModal from 'src/components/BaseModal/index.vue'
 import { Ref, ref } from 'vue'
 const slide = ref<number>(1);
+const toolbar = ref<boolean>(true)
 const autoplay = ref<boolean>(true);
 const model: Ref<string | null> = ref(null);
 const countries = [
@@ -45,7 +47,7 @@ const countries = [
       </q-carousel>
       <div class="w-1/2 absolute top-10 left-24">
         <p class="border-text text-white text-4xl font-extrabold uppercase leading-[51px]">Logistika xizmatidan
-          fiydalaninng</p>
+          foydalaning</p>
         <p class="text-white text-base font-semibold uppercase leading-tight">Sizga bu masalada yordam beradi</p>
       </div>
     </div>
@@ -149,6 +151,9 @@ const countries = [
       </div>
     </div>
   </div>
+  <BaseModal v-model="toolbar" :closable="toolbar" body-class="w-40 h-40 bg-white">
+    
+  </BaseModal>
 </template>
 <style scoped>
 .border-text {
@@ -162,4 +167,5 @@ const countries = [
 
 .subtitle {
   @apply text-gray-500 text-[13px] font-medium leading-tight
-}</style>
+}
+</style>

@@ -50,7 +50,9 @@ const slide = ref<number>(1)
                     <router-link to="/login">
                         <BaseButton color="green" label="Ro'yhatdan o'tish" class="py-1.5" />
                     </router-link>
-                    <BaseButton color="white" label="Kabinetga kirish" class="py-1.5 mt-2" />
+                    <router-link to="/register">
+                        <BaseButton color="white" label="Kabinetga kirish" class="py-1.5 mt-2" />
+                    </router-link>
                 </div>
                 <div class="bg-white rounded-3xl w-full h-[55%] mt-[3%]">
                     <q-carousel animated v-model="slide" arrows infinite swipeable :autoplay="5000"

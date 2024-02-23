@@ -21,8 +21,26 @@ const chartOptions = {
     dataLabels: {
         enabled: false
     },
+    dropShadow: {
+        enabled: false
+    },
+    toolbar: {
+        show: false
+    },
+    zoom: {
+        enabled: false
+    },
+    animations: {
+        enabled: true
+    },
     stroke: {
-        curve: 'smooth'
+        curve: 'smooth',
+        lineCap: 'butt',
+        colors: undefined,
+        width: [1, 0]
+    },
+    markers: {
+        size: 0.5
     },
     xaxis: {
         type: 'datetime',
@@ -46,6 +64,6 @@ const chartOptions = {
 
 <template>
     <div id="chart">
-        <apexchart type="area" class="w-full h-80" :options="chartOptions" :series="series"></apexchart>
+        <apexchart type="area" height="350" :options="chartOptions" :series="series"></apexchart>
     </div>
 </template>

@@ -5,7 +5,7 @@ const props = defineProps({
 })
 </script>
 <template>
-    <div class="rounded-3xl cursor-pointer hover:bg-opacity-90 transition" :class="{
+    <div class="rounded-3xl cursor-pointer hover:bg-opacity-90 transition select-none" :class="{
         'bg-emerald-600 text-white': props.color == 'green',
         'bg-white text-emerald-600 border border-emerald-600': props.color == 'white'
     }">

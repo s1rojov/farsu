@@ -11,7 +11,7 @@ const props = defineProps({
     },
     placeholder: {
         type: String,
-        required: true
+        default: ''
     },
     isSearch: {
         type: Boolean,

@@ -30,7 +30,7 @@ const { sidebarItems, clickedCompanyItem, isOpenCompanyItems } = useCabinetLayou
         </div>
         <div class="w-[83%] h-full">
             <!-- header started -->
-            <div class="w-full bg-white py-2 px-7   ">
+            <div class="w-full bg-white flex items-center justify-end m-auto top-0 bottom-0 right-0 left-0 px-7 h-[9vh]">
                 <div class="flex items-center justify-end gap-5">
                     <BaseIcon name="notification" class="w-5 h-5 cursor-pointer" />
                     <BaseIcon name="basket" class="w-5 h-5 cursor-pointer" />
@@ -45,7 +45,9 @@ const { sidebarItems, clickedCompanyItem, isOpenCompanyItems } = useCabinetLayou
                 </div>
             </div>
             <!-- header ended -->
-            <router-view></router-view>
+            <div class="overflow-y-scroll h-[91vh] scrollbarActive">
+                <router-view></router-view>
+            </div>
         </div>
     </div>
 </template>

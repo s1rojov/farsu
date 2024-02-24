@@ -47,7 +47,7 @@ interface Car {
 const showModal = ref(false);
 const name = ref('');
 const phone = ref('');
-const selectedCar = ref<number>(0);
+const selectedCar = ref<number>(1);
 const cars: Car[] = [
   {
     id: 1,

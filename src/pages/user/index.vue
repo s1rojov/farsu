@@ -51,20 +51,3 @@ const { sidebarItems, clickedCompanyItem, isOpenCompanyItems, goRoute } = useCab
         </div>
     </div>
 </template>
-<style scoped>
-.scrollbarActive::-webkit-scrollbar {
-    @apply ease-in duration-300;
-    width: 2px;
-    height: 0;
-    /* display: none; */
-    opacity: 0;
-}
-
-.scrollbarActive::-webkit-scrollbar-track {
-    @apply bg-inherit opacity-0;
-}
-
-.scrollbarActive::-webkit-scrollbar-thumb {
-    @apply bg-slate-400 hover:bg-slate-500 hover:dark:bg-slate-600 opacity-0 ease-in duration-300 transition rounded-md cursor-pointer;
-}
-</style>

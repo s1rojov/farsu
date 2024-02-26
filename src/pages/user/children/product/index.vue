@@ -12,7 +12,7 @@ const size = ref<number>(10)
             <BaseButton color="green" class="py-2.5 px-10 rounded-[10px]" label="Qo'shish" />
         </div>
         <PaginationTable class="mt-3" :pageSize="size">
-            <div class="grid grid-cols-3 gap-5">
+            <div class="grid lg:grid-cols-3 2xl:grid-cols-4 gap-5">
                 <productCard v-for="item in 20" :key="item" />
             </div>
         </PaginationTable>

@@ -29,9 +29,9 @@ const options = [
     <div class="p-5">
         <p class="text-zinc-900 text-xl font-bold leading-snug">Bosh sahifa</p>
 
-        <div class="flex items-center justify-between mt-3">
-            <div class="bg-white rounded-2xl w-fit p-4" v-for="item, index in fakeInfoCompany" :key="index">
-                <div class="flex items-center justify-between gap-10 mb-5">
+        <div class="grid grid-cols-4 gap-5 mt-3">
+            <div class="bg-white rounded-2xl p-4" v-for="item, index in fakeInfoCompany" :key="index">
+                <div class="flex items-center justify-between mb-5">
                     <div>
                         <span class="text-black text-base font-semibold leading-snug">{{ item.title }}</span>
                         <div class="flex items-center gap-1 mt-4" v-if="item.icon == 'rating'">
@@ -49,7 +49,7 @@ const options = [
             </div>
         </div>
         <!-- chart and news started -->
-        <div class="grid grid-cols-2 gap-3 mt-3">
+        <div class="grid grid-cols-2 gap-5 mt-5">
             <divc class="bg-white rounded-2xl p-4">
                 <div class="flex items-center justify-between">
                     <p class="text-zinc-900 text-base font-bold">Statistika</p>

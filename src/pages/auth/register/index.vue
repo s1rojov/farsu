@@ -60,7 +60,7 @@ const countries = [
                     <div class="w-[48%]">
                         <div class="bg-white h-full rounded-3xl p-5 w-fit mx-auto">
                             <!-- header started -->
-                            <div class="flex items-center justify-between">
+                            <div class="flex items-center justify-between gap-10">
                                 <div class="flex items-center justify-center gap-1">
                                     <div class="h-8 w-8 bg-emerald-600 relative text-white rounded-full">
                                         <p

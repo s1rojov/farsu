@@ -1,7 +1,11 @@
 <script setup lang="ts">
 const props = defineProps({
     color: String,
-    label: String
+    label: String,
+    icon: {
+        type: String,
+        default: ''
+    }
 })
 </script>
 <template>
@@ -9,6 +13,7 @@ const props = defineProps({
         'bg-emerald-600 text-white': props.color == 'green',
         'bg-white text-emerald-600 border border-emerald-600': props.color == 'white'
     }">
-        <p class="text-center">{{ props.label }}</p>
+        <p v-if="props.icon == ''" class="text-center">{{ props.label }}</p>
+        <BaseIcon v-else :name="props.icon" class="text-white h-[18px] w-[18px]" />
     </div>
 </template>

@@ -1,5 +1,7 @@
 import { ref } from 'vue'
+import { useRouter } from 'vue-router'
 export function useCabinetLayoutFn() {
+    const router = useRouter()
     const isOpenCompanyItems = ref<boolean>(false)
     const sidebarItems = [
         {
@@ -12,19 +14,29 @@ export function useCabinetLayoutFn() {
             icon: 'company',
             children: [
                 {
-                    path: '',
+                    path: '/personal-cabinet/company',
                     title: 'Kompaniya haqida'
                 },
                 {
-                    path: 'upload-data',
+                    path: '/personal-cabinet/company/upload',
                     title: "Ma'lumot yuklash",
                 }
             ]
         },
         {
-            title: 'Mahsulot/Xizmat',
+            title: 'Savat',
+            icon: 'basket',
+            path: 'buy-history'
+        },
+        {
+            title: 'Buyurtmalar',
+            icon: 'notification',
+            path: 'orders'
+        },
+        {
+            title: 'Mahsulotlar',
             icon: 'product',
-            path: 'product'
+            path: '/personal-cabinet/product'
         },
         {
             title: 'Tarif reja',
@@ -32,14 +44,24 @@ export function useCabinetLayoutFn() {
             path: 'plans'
         }
     ]
-    function clickedCompanyItem(icon: string) {
-        if (icon == 'company') {
+    function clickedCompanyItem(item: any) {
+        if (item.icon == 'company') {
             isOpenCompanyItems.value = !isOpenCompanyItems.value
         }
+        if (item.path) {
+            goRoute(item.path)
+        }
+        // console.log(item)
+    }
+
+
+    function goRoute(path: string) {
+        router.push(path)
     }
     return {
         sidebarItems,
         isOpenCompanyItems,
-        clickedCompanyItem
+        clickedCompanyItem,
+        goRoute
     }
 }

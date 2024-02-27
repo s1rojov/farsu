@@ -12,8 +12,25 @@ const cabinet = [
             {
                 path: 'company',
                 name: 'Personal cabinet company',
-                component: () => import('src/pages/user/children/company/index.vue')
+                component: () => import('src/pages/user/children/company/index.vue'),
+                children: [
+                    {
+                        path: '',
+                        name: 'About company',
+                        component: () => import('src/pages/user/children/company/aboutCompany/index.vue')
+                    },
+                    {
+                        path: 'upload',
+                        name: 'Upload data for company',
+                        component: () => import('src/pages/user/children/company/uploadData/index.vue')
+                    }
+                ]
             },
+            {
+                path: 'product',
+                name: 'Personal cabinet product',
+                component: () => import('src/pages/user/children/product/index.vue')
+            }
         ]
     }
 ]

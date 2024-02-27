@@ -3,10 +3,6 @@ const series = [
     {
         name: "Mahsulotni ko'rishlar",
         data: [31, 40, 28, 51, 42, 109, 100]
-    },
-    {
-        name: "Mahsulotni ko'rsatishlar",
-        data: [11, 32, 45, 32, 34, 52, 41]
     }
 ];
 

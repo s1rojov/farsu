@@ -113,11 +113,11 @@ const resetForm = () => {
         </div>
         <div class="grid grid-cols-2 gap-[18px]">
           <div>
-            <p class="text-gray-500 text-base font-semiboldleading-snug pb-[15px]">Viloyatdan</p>
+            <p class="text-gray-500 text-base font-semibold leading-snug pb-[15px]">Viloyatdan</p>
             <BaseSelect :options="countries" width="w-full bg-stone-50" />
           </div>
           <div>
-            <p class="text-gray-500 text-base font-semiboldleading-snug pb-[15px]">Tumandan(Shahar)</p>
+            <p class="text-gray-500 text-base font-semibold leading-snug pb-[15px]">Tumandan(Shahar)</p>
             <BaseSelect :options="countries" width="w-full bg-stone-50" />
           </div>
         </div>

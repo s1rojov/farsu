@@ -3,12 +3,56 @@ import { ref } from 'vue'
 import BaseButton from 'src/components/BaseButton/index.vue'
 import CategoryCard from 'src/components/CategoryCard/index.vue'
 import BaseAdvertisingCard from 'src/components/BaseAdvertisingCard/index.vue'
-const objInfo = {
-    iconName: 'industry',
-    label: 'Sanoat',
-    path: '/',
-    count: 12
-}
+const objInfo = [
+    {
+        iconName: 'industry',
+        label: 'Sanoat',
+        path: '/products',
+        count: 12
+    },
+    {
+        iconName: 'service',
+        label: 'Xunarmand',
+        path: '/',
+        count: 12
+    },
+    {
+        iconName: 'services',
+        label: 'Xizmat',
+        path: '/',
+        count: 12
+    },
+    {
+        iconName: 'agriculture',
+        label: 'Qishloq xo’jaligi',
+        path: '/',
+        count: 12
+    },
+    {
+        iconName: 'foreign-materials',
+        label: 'Xorijiy xom -ashyolar',
+        path: '/',
+        count: 12
+    },
+    {
+        iconName: 'technology',
+        label: 'Xorijiy texnologiyalar',
+        path: '/',
+        count: 12
+    },
+    {
+        iconName: 'foreigner-service',
+        label: 'Xorijiy tayyor maxsulot',
+        path: '/',
+        count: 12
+    },
+    {
+        iconName: 'foreign-service',
+        label: 'Xorijiy xizmat',
+        path: '/',
+        count: 12
+    }
+]
 const advertisings = {
     logo: '/images/firma.png',
     name: '«Qizilqumsement» AJ',
@@ -85,7 +129,7 @@ const slide = ref<number>(1)
         <div class="mt-16">
             <div class="text-slate-800 text-[40px] font-extrabold leading-[50px]">Bo’limlarni turlari</div>
             <div class="grid grid-cols-4 gap-5 mt-6">
-                <CategoryCard v-for="item in 8" :key="item" :cardData="objInfo" />
+                <CategoryCard v-for="(item, index) in objInfo" :key="index" :cardData="item" />
             </div>
         </div>
         <!-- Categories ended -->
@@ -114,6 +158,7 @@ const slide = ref<number>(1)
             <img src="images/statistic.png" class="absolute w-[30%] bottom-0" alt="error">
         </div>
         <!-- statistic section ended -->
+
         <!-- advertising section started -->
         <div class="mt-16">
             <div class="text-slate-800 text-[40px] font-extrabold leading-[50px] pb-9">E’lon va reklamalar</div>
@@ -121,6 +166,7 @@ const slide = ref<number>(1)
                 <BaseAdvertisingCard v-for="item in 6" :key="item" :card-data="advertisings" />
             </div>
         </div>
+        <!-- advertising section ended -->
     </div>
 </template>
   

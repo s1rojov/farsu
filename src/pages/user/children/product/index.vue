@@ -16,7 +16,8 @@ const size = ref<number>(10)
     <div class="p-5">
         <div class="flex items-center justify-between">
             <p class="text-zinc-900 text-xl font-bold leading-snug">Mahsulotlar</p>
-            <BaseButton color="green" class="py-2.5 px-10 rounded-[10px]" label="Qo'shish" @click="visibleAddPage = true" />
+            <q-btn textColor="white" v-if="!visibleAddPage" class="bg-emerald-600 rounded-[10px] px-10" label="Qo'shish"
+                @click="visibleAddPage = true" />
         </div>
         <!-- products started -->
         <PaginationTable v-if="!visibleAddPage" class="mt-3" :pageSize="size">
@@ -26,7 +27,7 @@ const size = ref<number>(10)
         </PaginationTable>
         <!-- products ended -->
         <!-- add product page started -->
-        <addProductPage v-else />
+        <addProductPage v-else class="mt-3" />
         <!-- add product page ended -->
     </div>
 </template>

@@ -81,7 +81,8 @@ function testt(val: any) {
             <div class="bg-white flex items-center justify-between rounded-3xl mt-3 px-1.5">
                 <div v-for="item, index in navbarItems" :key="index">
                     <router-link v-slot="{ isActive }" :to="item.route">
-                        <div class="px-7" :class="[isActive ? 'bg-emerald-600 text-white py-1.5 rounded-3xl' : 'py-2.5']">
+                        <div class="px-7 text-center"
+                            :class="[isActive ? 'bg-emerald-600 text-white w-full py-1.5 rounded-3xl' : 'py-2.5']">
                             {{ item.title }}
                         </div>
                     </router-link>

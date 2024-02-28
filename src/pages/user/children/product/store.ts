@@ -4,6 +4,7 @@ export const useProductStore = defineStore('product', {
     state: () => {
         return {
             visibleAddPage: false
+
         }
     },
 })

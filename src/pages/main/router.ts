@@ -27,6 +27,11 @@ const main = {
       path: 'news',
       name: 'News page',
       component: () => import('src/pages/main/news/index.vue'),
+    },
+    {
+      path: 'products',
+      name: 'Sanoat',
+      component: () => import('src/pages/templates/products/index.vue')
     }
   ]
 };

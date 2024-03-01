@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import { useCabinetLayoutFn } from './composable';
 import BaseIcon from 'src/components/BaseIcon/index.vue'
-const { sidebarItems, clickedCompanyItem, isOpenCompanyItems, goRoute } = useCabinetLayoutFn()
+import { ref } from 'vue';
+const { sidebarItems, clickedCompanyItem, isOpenCompanyItems, navigate } = useCabinetLayoutFn()
+// const drawer = ref(false)
 </script>
 <template>
     <div class="flex w-screen h-screen overflow-hidden">
@@ -9,7 +11,7 @@ const { sidebarItems, clickedCompanyItem, isOpenCompanyItems, goRoute } = useCab
             <!-- <img src="images/logo.png" class="mx-auto w-1/2 mt-5" alt="error"> -->
             <BaseIcon name="logo" class="mx-auto w-1/2 mt-5" />
             <div class="mt-5">
-                <div v-for="item, index in sidebarItems" :key="index" class="select-none cursor-pointer ">
+                <!-- <div v-for="item, index in sidebarItems" :key="index" class="select-none cursor-pointer ">
                     <div class="flex  items-center justify-between transition pl-6 pr-4 py-4 hover:bg-black/5"
                         @click="clickedCompanyItem(item)">
                         <div class="flex items-center justify-start gap-3">
@@ -27,7 +29,36 @@ const { sidebarItems, clickedCompanyItem, isOpenCompanyItems, goRoute } = useCab
                             </p>
                         </div>
                     </div>
-                </div>
+                </div> -->
+
+                <q-list padding>
+                    <q-item clickable @click="clickedCompanyItem(item)" v-ripple v-for="item, index in sidebarItems"
+                        :key="index" class="select-none py-4 pl-6">
+                        <q-item-section avatar>
+                            <BaseIcon :name="item.icon" class="text-white w-5 h-5" />
+                        </q-item-section>
+
+                        <q-item-section class="text-base text-white">
+                            {{ item.title }}
+                        </q-item-section>
+                        <q-item-section avatar v-if="item.children?.length">
+                            <BaseIcon name="down" class="text-white w-4 h-4"
+                                :class="{ 'rotate-180': isOpenCompanyItems }" />
+                        </q-item-section>
+                        <!-- <q-item>
+                            <div>
+                                <div v-for="subItem, subIndex in item.children" :key="subIndex" class="pl-14"
+                                    @click="goRoute(subItem.path)">
+                                    <p class="py-2 text-white font-normal transition text-sm">
+                                        {{ subItem.title }}
+                                    </p>
+                                </div>
+                            </div>
+                        </q-item> -->
+                    </q-item>
+                </q-list>
+
+
             </div>
         </div>
         <div class="w-[83%] h-full">

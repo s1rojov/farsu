@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 const tab = ref('uz')
-
 const tabs = [
     {
         icon: 'uzb',

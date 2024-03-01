@@ -49,19 +49,19 @@ export function useCabinetLayoutFn() {
             isOpenCompanyItems.value = !isOpenCompanyItems.value
         }
         if (item.path) {
-            goRoute(item.path)
+            navigate(item.path)
         }
         // console.log(item)
     }
 
 
-    function goRoute(path: string) {
+    function navigate(path: string) {
         router.push(path)
     }
     return {
         sidebarItems,
         isOpenCompanyItems,
         clickedCompanyItem,
-        goRoute
+        navigate
     }
 }

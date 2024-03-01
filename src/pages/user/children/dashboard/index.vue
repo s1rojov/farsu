@@ -45,7 +45,8 @@ const options = [
                         <BaseIcon :name="item.icon" class="w-5 h-5 text-emerald-500/95" />
                     </div>
                 </div>
-                <BaseButton color="white" class="select-none py-2 rounded-lg w-fit px-5" label="Batafsil" />
+                <q-btn label="Batafsil" class="rounded-lg px-5 py-2 text-emerald-600" />
+                <!-- <BaseButton color="white" class="select-none py-2 rounded-lg w-fit px-5" label="Batafsil" /> -->
             </div>
         </div>
         <!-- chart and news started -->

@@ -9,9 +9,9 @@
 
 
       <p class="text-slate-900 text-3xl mt-[40px] mb-2">Siz izlayotgan sahifa topilmadi(</p>
-      <p class="text-gray-500 text-base">Siz izlayotgan sahifa topilmadi(</p>
+      <p class="text-gray-500 lg:text-base">Siz izlayotgan sahifa topilmadi(</p>
 
-    <img :src="error404" alt="Not found">
+    <img width="700px" :src="error404" alt="Not found">
 
     <q-btn
     class="q-mt-xl bg-emerald-600 px-7 py-4 rounded-[43px]"

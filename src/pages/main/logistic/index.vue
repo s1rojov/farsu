@@ -4,15 +4,15 @@ import BaseButton from 'src/components/BaseButton/index.vue'
 import BaseIcon from 'src/components/BaseIcon/index.vue'
 import BaseModal from 'src/components/BaseModal/index.vue'
 import BaseInput from 'src/components/BaseInput/index.vue'
-import { Ref, ref } from 'vue'
+import { ref } from 'vue'
 const slide = ref<number>(1);
 const toolbar = ref<boolean>(false)
 const autoplay = ref<boolean>(true);
-const model: Ref<string | null> = ref(null);
+// const model: Ref<string | null> = ref(null);
 const countries = [
   {
     id: 1,
-    title: "Toshkent shahri"
+    title: 'Toshkent shahri'
   },
   {
     id: 2,
@@ -24,15 +24,15 @@ const countries = [
   },
   {
     id: 3,
-    title: "Farg'ona viloyati"
+    title: 'Farg\'ona viloyati'
   },
   {
     id: 3,
-    title: "Samarqand viloyati"
+    title: 'Samarqand viloyati'
   },
   {
     id: 3,
-    title: "Qashqadaryo viloyati"
+    title: 'Qashqadaryo viloyati'
   }
 ]
 function toggleBtn() {
@@ -44,10 +44,10 @@ interface Car {
   image: string;
 }
 
-const showModal = ref(false);
+// const showModal = ref(false);
 const name = ref('');
 const phone = ref('');
-const selectedCar = ref<number>(1);
+const selectedCar = ref<number>(0);
 const cars: Car[] = [
   {
     id: 1,
@@ -218,10 +218,8 @@ const resetForm = () => {
     </div>
     <p class="py-7 text-zinc-900 text-base font-semibold leading-snug">Avtomobil turi</p>
     <div class="flex justify-between items-center cursor-pointer">
-      <img class="opacity-30" v-for="car in cars" :key="car.id" :src="car.image" :alt="car.name" @click="selectCar(car)"
-        :class="{
-          'opacity-100': (car.id === selectedCar)
-        }">
+      <img v-for="car in cars" :key="car.id" :src="car.image" :alt="car.name" @click="selectCar(car)"
+        :class="car.id==selectedCar ? 'opacity-100' : 'opacity-30'">
     </div>
     <div class="flex justify-end pt-10">
       <BaseButton @click="submitForm()" color="green" label="Yuborish" class="px-8 py-2" />
